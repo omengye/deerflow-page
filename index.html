@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Optimization -->
+    <title data-i18n="seo-title">DeerFlow-Api | Multi-Client Autonomous AI Agent Workflow Ecosystem</title>
+    <meta name="description" content="DeerFlow-Api is a multi-client AI Agent ecosystem built on FastAPI and DeerFlow harness. Exposing agent capabilities via standard REST and SSE APIs, it connects a Go+Bubble Tea TUI terminal and Kotlin+Compose Android App for real-time streaming workflows." />
+    <meta name="keywords" content="DeerFlow-Api, AI Agent, AG-UI, FastAPI, Go, Bubble Tea, Kotlin, Jetpack Compose, TUI, Android, SSE, Workflow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="DeerFlow-Api | Multi-Client Autonomous AI Agent Workflow Ecosystem" />
+    <meta property="og:description" content="AG-UI protocol powered AI Agent workflow ecosystem linking FastAPI, Go TUI, and Jetpack Compose Android client over SSE streams." />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <header class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="#hero" class="nav-logo">
+          <div class="logo-symbol">
+            <svg viewBox="0 0 100 100" class="logo-svg">
+              <defs>
+                <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#10B981" />
+                  <stop offset="100%" stop-color="#3B82F6" />
+                </linearGradient>
+              </defs>
+              <path d="M 50 15 C 38 15, 30 25, 30 35 C 30 45, 42 55, 50 55 C 58 55, 70 45, 70 35 C 70 25, 62 15, 50 15 Z" fill="none" stroke="url(#logo-grad)" stroke-width="6" stroke-linecap="round" />
+              <path d="M 30 35 C 20 35, 15 25, 10 30" fill="none" stroke="url(#logo-grad)" stroke-width="5" stroke-linecap="round" />
+              <path d="M 70 35 C 80 35, 85 25, 90 30" fill="none" stroke="url(#logo-grad)" stroke-width="5" stroke-linecap="round" />
+              <path d="M 50 55 L 50 85" fill="none" stroke="url(#logo-grad)" stroke-width="6" stroke-linecap="round" />
+              <circle cx="50" cy="85" r="7" fill="url(#logo-grad)" />
+            </svg>
+          </div>
+          <span class="logo-text">DeerFlow-Api</span>
+        </a>
+        
+        <nav class="nav-menu" aria-label="Main Navigation">
+          <a href="#hero" class="nav-link active" id="nav-link-hero" data-i18n="nav-home">Home</a>
+          <a href="#ecosystem" class="nav-link" id="nav-link-ecosystem" data-i18n="nav-ecosystem">Components</a>
+          <a href="#sandbox" class="nav-link" id="nav-link-sandbox" data-i18n="nav-sandbox">Coordinated Demo</a>
+          <a href="#architecture" class="nav-link" id="nav-link-architecture" data-i18n="nav-architecture">Architecture</a>
+        </nav>
+        
+        <div class="nav-actions">
+          <div class="lang-select-wrapper">
+            <i data-lucide="languages" class="lang-icon"></i>
+            <select class="lang-select" id="lang-select" aria-label="Language Selector">
+              <option value="en">English</option>
+              <option value="zh">简体中文</option>
+              <option value="ja">日本語</option>
+            </select>
+          </div>
+          <a href="https://github.com/omengye/deerflow-api/" target="_blank" rel="noopener noreferrer" class="github-btn" id="github-nav-btn">
+            <i data-lucide="github"></i>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section">
+        <div class="hero-glow-bg"></div>
+        <div class="hero-container">
+          <div class="hero-text">
+            <div class="hero-badge">
+              <span class="badge-dot"></span>
+              <span data-i18n="hero-badge-text">Based on ByteDance deerflow</span>
+            </div>
+            <h1 class="hero-title" data-i18n-html="hero-title">
+              DeerFlow-Api <br />
+              <span class="gradient-text">Multi-Client AI Agent</span> <br />
+              Workflow Ecosystem
+            </h1>
+            <p class="hero-subtitle" data-i18n="hero-subtitle">
+              Based on AG-UI protocol, connecting FastAPI backend, Go+Bubble Tea terminal console, and Kotlin+Compose mobile app. Experience real-time stream responses of thinking and tools execution.
+            </p>
+            <div class="hero-buttons">
+              <a href="#sandbox" class="btn btn-primary" id="hero-btn-start">
+                <span data-i18n="hero-btn-start">Sync Demo</span>
+                <i data-lucide="play-circle"></i>
+              </a>
+              <a href="#architecture" class="btn btn-outline" id="hero-btn-arch">
+                <span data-i18n="hero-btn-arch">Architecture</span>
+                <i data-lucide="git-fork"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="hero-visual">
+            <div class="visual-glow-glow"></div>
+            <!-- Interactive Visual Device Illustration -->
+            <div class="visual-scene">
+              <!-- API Core Visual -->
+              <div class="visual-card visual-api floating-1">
+                <div class="card-icon-wrapper api-grad">
+                  <i data-lucide="cpu"></i>
+                </div>
+                <div class="card-info">
+                  <h3>deerflow-api</h3>
+                  <p data-i18n="hero-visual-api">State Engine & Tools</p>
+                </div>
+                <div class="card-pulse"></div>
+              </div>
+              
+              <!-- TUI Visual -->
+              <div class="visual-card visual-tui floating-2">
+                <div class="card-icon-wrapper tui-grad">
+                  <i data-lucide="terminal"></i>
+                </div>
+                <div class="card-info">
+                  <h3>deerflow-tui</h3>
+                  <p data-i18n="hero-visual-tui">Command Line Terminal</p>
+                </div>
+                <div class="tui-dot-status"></div>
+              </div>
+              
+              <!-- APP Visual -->
+              <div class="visual-card visual-app floating-3">
+                <div class="card-icon-wrapper app-grad">
+                  <i data-lucide="smartphone"></i>
+                </div>
+                <div class="card-info">
+                  <h3>deerflow-app</h3>
+                  <p data-i18n="hero-visual-app">Android Mobile</p>
+                </div>
+                <div class="app-wifi"></div>
+              </div>
+              
+              <!-- Glowing Connection Lines using SVG -->
+              <svg class="visual-lines" viewBox="0 0 400 400">
+                <path d="M 200 130 L 90 230" stroke="rgba(16, 185, 129, 0.4)" stroke-width="2" stroke-dasharray="6,6" />
+                <path d="M 200 130 L 310 230" stroke="rgba(59, 130, 246, 0.4)" stroke-width="2" stroke-dasharray="6,6" />
+                <!-- Flowing animation dots -->
+                <circle r="4" fill="#10B981" class="flow-dot-1">
+                  <animateMotion dur="4s" repeatCount="indefinite" path="M 200 130 L 90 230" />
+                </circle>
+                <circle r="4" fill="#3B82F6" class="flow-dot-2">
+                  <animateMotion dur="4s" repeatCount="indefinite" path="M 200 130 L 310 230" />
+                </circle>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ecosystem Core Section -->
+      <section id="ecosystem" class="ecosystem-section">
+        <div class="section-container">
+          <div class="section-header">
+            <h2 class="section-title" data-i18n="eco-title">Core Ecosystem Components</h2>
+            <p class="section-subtitle" data-i18n="eco-subtitle">Connecting backend services, command-line interfaces, and mobile clients for full-scenario agent execution.</p>
+          </div>
+          
+          <div class="ecosystem-grid">
+            <!-- Card 1: API -->
+            <div class="eco-card" id="card-api">
+              <div class="eco-card-header">
+                <div class="eco-card-icon api-icon-bg">
+                  <i data-lucide="cpu"></i>
+                </div>
+                <span class="eco-card-tag tag-api" data-i18n="eco-api-tag">Core Backend</span>
+              </div>
+              <h3 class="eco-card-title">deerflow-api</h3>
+              <p class="eco-card-desc" data-i18n="eco-api-desc">
+                High-performance backend service built on FastAPI and DeerFlow harness, exposing capabilities as REST and SSE API. Supports external ACP agent integration and WSL2 sandboxing for safe isolation.
+              </p>
+              <ul class="eco-card-features">
+                <li data-i18n-html="eco-api-feat-1"><i data-lucide="check"></i> <span>Expose standard REST endpoints and SSE (Server-Sent Events) live streams</span></li>
+                <li data-i18n-html="eco-api-feat-2"><i data-lucide="check"></i> <span>Support external ACP agents (e.g. Codex or Claude Code) via Agent Client Protocol</span></li>
+                <li data-i18n-html="eco-api-feat-3"><i data-lucide="check"></i> <span>Built-in LocalWslProvider (WSL2 sandbox) for Windows compatibility and VM-level isolation</span></li>
+              </ul>
+              <div class="eco-card-footer">
+                <span class="path-label">GitHub:</span>
+                <a href="https://github.com/omengye/deerflow-api/" target="_blank" rel="noopener noreferrer"><code>omengye/deerflow-api</code></a>
+              </div>
+            </div>
+            
+            <!-- Card 2: TUI -->
+            <div class="eco-card" id="card-tui">
+              <div class="eco-card-header">
+                <div class="eco-card-icon tui-icon-bg">
+                  <i data-lucide="terminal"></i>
+                </div>
+                <span class="eco-card-tag tag-tui" data-i18n="eco-tui-tag">Terminal UI</span>
+              </div>
+              <h3 class="eco-card-title">deerflow-tui</h3>
+              <p class="eco-card-desc" data-i18n="eco-tui-desc">
+                A native terminal user interface client built using Go and Bubble Tea. Connected via AG-UI protocol, it delivers highly responsive real-time streaming events and keyboard-centric interaction.
+              </p>
+              <ul class="eco-card-features">
+                <li data-i18n-html="eco-tui-feat-1"><i data-lucide="check"></i> <span>Stream rendering of text, reasoning/thinking paths, and full tool execution lifecycles</span></li>
+                <li data-i18n-html="eco-tui-feat-2"><i data-lucide="check"></i> <span>Quick commands: create thread (/new), cancel run (/cancel), and exit</span></li>
+                <li data-i18n-html="eco-tui-feat-3"><i data-lucide="check"></i> <span>Auto-adaptive terminal width, smart wrapping, and Ctrl+C clipboard copy support</span></li>
+              </ul>
+              <div class="eco-card-footer">
+                <span class="path-label">GitHub:</span>
+                <a href="https://github.com/omengye/deerflow-tui/" target="_blank" rel="noopener noreferrer"><code>omengye/deerflow-tui</code></a>
+              </div>
+            </div>
+            
+            <!-- Card 3: APP -->
+            <div class="eco-card" id="card-app">
+              <div class="eco-card-header">
+                <div class="eco-card-icon app-icon-bg">
+                  <i data-lucide="smartphone"></i>
+                </div>
+                <span class="eco-card-tag tag-app" data-i18n="eco-app-tag">Mobile App</span>
+              </div>
+              <h3 class="eco-card-title">deerflow-app</h3>
+              <p class="eco-card-desc" data-i18n="eco-app-desc">
+                Native Android client built with Kotlin and Jetpack Compose. Re-implementing the state machine reducer, it offers thread history database, markdown rendering, and background SSE stream keep-alive.
+              </p>
+              <ul class="eco-card-features">
+                <li data-i18n-html="eco-app-feat-1"><i data-lucide="check"></i> <span>Select local documents or capture photos directly via camera, auto-mapping to virtual workspace</span></li>
+                <li data-i18n-html="eco-app-feat-2"><i data-lucide="check"></i> <span>Integrated SseForegroundService to prevent Android process limits and keep stream syncing active</span></li>
+                <li data-i18n-html="eco-app-feat-3"><i data-lucide="check"></i> <span>Full Markdown rendering support including headers, lists, code blocks, and tables</span></li>
+              </ul>
+              <div class="eco-card-footer">
+                <span class="path-label">GitHub:</span>
+                <a href="https://github.com/omengye/deerflow-app" target="_blank" rel="noopener noreferrer"><code>omengye/deerflow-app</code></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Coordinated Demo Section -->
+      <section id="sandbox" class="sandbox-section">
+        <div class="section-container">
+          <div class="section-header">
+            <h2 class="section-title" data-i18n="sim-title">Multi-Client Coordinated Demo</h2>
+            <p class="section-subtitle" data-i18n="sim-subtitle">Simulate TUI console, Android App, and API server running workflows and syncing status in real-time under different business scenarios.</p>
+          </div>
+          
+          <div class="sandbox-demo-grid">
+            <!-- Sandbox Sidebar / Controls -->
+            <div class="sandbox-control-card">
+              <h3 data-i18n="sim-panel-title">Workflow Control Panel</h3>
+              <p class="control-desc" data-i18n="sim-panel-desc">Choose a typical AI Agent workflow below to observe the coordinated streaming responses between TUI and mobile clients.</p>
+              
+              <div class="workflow-selectors">
+                <button class="workflow-btn active" id="btn-wf-translate" data-wf="translate">
+                  <div class="wf-btn-title">
+                    <i data-lucide="languages"></i>
+                    <span data-i18n="sim-wf-trans-title">Translation Agent</span>
+                  </div>
+                  <span class="wf-btn-sub" data-i18n="sim-wf-trans-sub">Multi-engine invocation & polishing</span>
+                </button>
+                
+                <button class="workflow-btn" id="btn-wf-coding" data-wf="coding">
+                  <div class="wf-btn-title">
+                    <i data-lucide="code-2"></i>
+                    <span data-i18n="sim-wf-code-title">Code Audit & Refactoring</span>
+                  </div>
+                  <span class="wf-btn-sub" data-i18n="sim-wf-code-sub">Static AST analysis & LLM patching</span>
+                </button>
+                
+                <button class="workflow-btn" id="btn-wf-search" data-wf="search">
+                  <div class="wf-btn-title">
+                    <i data-lucide="search-code"></i>
+                    <span data-i18n="sim-wf-search-title">Hotspot Aggregator Agent</span>
+                  </div>
+                  <span class="wf-btn-sub" data-i18n="sim-wf-search-sub">Scraping, cleaning, & multi-source summary</span>
+                </button>
+              </div>
+              
+              <div class="autoplay-indicator-box">
+                <div class="indicator-wave">
+                  <span class="wave-bar bar-1"></span>
+                  <span class="wave-bar bar-2"></span>
+                  <span class="wave-bar bar-3"></span>
+                </div>
+                <span data-i18n="sim-indicator-text">Coordinated demo auto-playing...</span>
+              </div>
+              
+              <div class="sim-status-box">
+                <div class="status-indicator">
+                  <span data-i18n="sim-status-label">Status:</span>
+                  <span class="status-dot dot-idle"></span>
+                  <span class="status-text" id="sim-status-val">Preparing</span>
+                </div>
+                <div class="progress-bar-container">
+                  <div class="progress-bar-fill" id="sim-progress-bar"></div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Sandbox TUI Screen -->
+            <div class="sandbox-device tui-device">
+              <div class="device-header">
+                <div class="window-actions">
+                  <span class="window-dot dot-red"></span>
+                  <span class="window-dot dot-yellow"></span>
+                  <span class="window-dot dot-green"></span>
+                </div>
+                <span class="window-title" id="tui-window-title">deerflow-tui (translate_agent.py)</span>
+                <div class="window-status-badge">
+                  <i data-lucide="terminal"></i>
+                  <span>bash</span>
+                </div>
+              </div>
+              <div class="device-body tui-console" id="tui-console-body">
+                <!-- TUI console elements will be dynamically injected by JS -->
+              </div>
+            </div>
+            
+            <!-- Sandbox APP Screen -->
+            <div class="sandbox-device app-device">
+              <div class="phone-case">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <!-- Phone Top Bar -->
+                  <div class="phone-top-bar">
+                    <span class="phone-time" id="phone-time-display">17:02</span>
+                    <div class="phone-status-icons">
+                      <i data-lucide="wifi" class="icon-small"></i>
+                      <i data-lucide="battery" class="icon-small"></i>
+                    </div>
+                  </div>
+                  <!-- Phone App Header -->
+                  <div class="phone-app-header">
+                    <div class="phone-app-avatar">DF</div>
+                    <div class="phone-app-title">
+                      <h4>DeerFlow Mobile</h4>
+                      <span class="phone-app-status"><span class="indicator-green-glow"></span> <span data-i18n="phone-app-status">API Connected</span></span>
+                    </div>
+                    <button class="phone-header-btn"><i data-lucide="menu"></i></button>
+                  </div>
+                  <!-- Phone App Chat/Logs -->
+                  <div class="phone-app-chat" id="phone-chat-body">
+                    <!-- Phone chat elements will be dynamically injected by JS -->
+                  </div>
+                  <!-- Phone App Input -->
+                  <div class="phone-app-input-bar">
+                    <button class="phone-input-action"><i data-lucide="plus"></i></button>
+                    <div class="phone-input-field" id="phone-input-placeholder" data-i18n="phone-input-placeholder">Enter workflow prompt...</div>
+                    <button class="phone-input-send"><i data-lucide="send"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- System Architecture Section -->
+      <section id="architecture" class="architecture-section">
+        <div class="section-container">
+          <div class="section-header">
+            <h2 class="section-title" data-i18n="arch-title">System Architecture & Data Flow</h2>
+            <p class="section-subtitle" data-i18n="arch-subtitle">A clear, transparent layout of the multi-client network topology, making every agent step traceble.</p>
+          </div>
+          
+          <div class="architecture-content">
+            <div class="arch-diagram-wrapper">
+              <svg class="arch-svg" viewBox="0 0 800 500" width="100%" height="100%">
+                <defs>
+                  <linearGradient id="grad-green" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#10B981" />
+                    <stop offset="100%" stop-color="#047857" />
+                  </linearGradient>
+                  <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3B82F6" />
+                    <stop offset="100%" stop-color="#1D4ED8" />
+                  </linearGradient>
+                  <linearGradient id="grad-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#8B5CF6" />
+                    <stop offset="100%" stop-color="#6D28D9" />
+                  </linearGradient>
+                  <linearGradient id="grad-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#F59E0B" />
+                    <stop offset="100%" stop-color="#D97706" />
+                  </linearGradient>
+                  
+                  <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+                    <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5" />
+                  </filter>
+                  <filter id="glow-emerald" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="8" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                </defs>
+                
+                <!-- Background Grid Lines -->
+                <g stroke="rgba(82, 82, 89, 0.08)" stroke-width="1">
+                  <path d="M 0 50 L 800 50 M 0 100 L 800 100 M 0 150 L 800 150 M 0 200 L 800 200 M 0 250 L 800 250 M 0 300 L 800 300 M 0 350 L 800 350 M 0 400 L 800 400 M 0 450 L 800 450" />
+                  <path d="M 100 0 L 100 500 M 200 0 L 200 500 M 300 0 L 300 500 M 400 0 L 400 500 M 500 0 L 500 500 M 600 0 L 600 500 M 700 0 L 700 500" />
+                </g>
+
+                <!-- Data pipelines -->
+                <path id="path-tui-api" d="M 230 160 C 320 160, 320 220, 400 220" fill="none" stroke="url(#grad-blue)" stroke-width="3" stroke-dasharray="8,6" opacity="0.8" />
+                <path id="path-app-api" d="M 570 160 C 480 160, 480 220, 400 220" fill="none" stroke="url(#grad-purple)" stroke-width="3" stroke-dasharray="8,6" opacity="0.8" />
+                <path id="path-api-llm" d="M 400 280 C 400 330, 270 330, 270 380" fill="none" stroke="url(#grad-green)" stroke-width="3" opacity="0.8" />
+                <path id="path-api-tools" d="M 400 280 C 400 330, 530 330, 530 380" fill="none" stroke="url(#grad-orange)" stroke-width="3" opacity="0.8" />
+
+                <!-- Moving data flow lights -->
+                <circle r="5" fill="#3B82F6" filter="url(#glow-emerald)">
+                  <animateMotion dur="3s" repeatCount="indefinite" path="M 230 160 C 320 160, 320 220, 400 220" />
+                </circle>
+                <circle r="5" fill="#8B5CF6" filter="url(#glow-emerald)">
+                  <animateMotion dur="3.5s" repeatCount="indefinite" path="M 570 160 C 480 160, 480 220, 400 220" />
+                </circle>
+                <circle r="5" fill="#10B981" filter="url(#glow-emerald)">
+                  <animateMotion dur="2.5s" repeatCount="indefinite" path="M 400 280 C 400 330, 270 330, 270 380" />
+                </circle>
+                <circle r="5" fill="#F59E0B" filter="url(#glow-emerald)">
+                  <animateMotion dur="2.8s" repeatCount="indefinite" path="M 400 280 C 400 330, 530 330, 530 380" />
+                </circle>
+
+                <!-- CLIENT NODES -->
+                <!-- TUI Node -->
+                <g transform="translate(110, 110)" filter="url(#shadow)">
+                  <rect width="120" height="70" rx="8" fill="#1b1b1f" stroke="#3B82F6" stroke-width="2" />
+                  <text x="60" y="32" fill="#fffff5" font-family="Outfit" font-size="14" font-weight="600" text-anchor="middle">deerflow-tui</text>
+                  <text x="60" y="52" fill="rgba(235, 235, 245, 0.5)" font-family="Inter" font-size="11" text-anchor="middle" id="svg-node-tui">TUI Terminal</text>
+                  <circle cx="15" cy="15" r="4" fill="#3B82F6" />
+                </g>
+                
+                <!-- App Node -->
+                <g transform="translate(570, 110)" filter="url(#shadow)">
+                  <rect width="120" height="70" rx="8" fill="#1b1b1f" stroke="#8B5CF6" stroke-width="2" />
+                  <text x="60" y="32" fill="#fffff5" font-family="Outfit" font-size="14" font-weight="600" text-anchor="middle">deerflow-app</text>
+                  <text x="60" y="52" fill="rgba(235, 235, 245, 0.5)" font-family="Inter" font-size="11" text-anchor="middle" id="svg-node-app">Android Client</text>
+                  <circle cx="15" cy="15" r="4" fill="#8B5CF6" />
+                </g>
+
+                <!-- CORE ENGINE (API) -->
+                <!-- API Node -->
+                <g transform="translate(320, 200)" filter="url(#shadow)">
+                  <rect width="160" height="80" rx="10" fill="#202024" stroke="#10B981" stroke-width="3" />
+                  <text x="80" y="35" fill="#fffff5" font-family="Outfit" font-size="16" font-weight="700" text-anchor="middle">deerflow-api</text>
+                  <text x="80" y="55" fill="#10B981" font-family="Fira Code" font-size="10" text-anchor="middle">REST / SSE API</text>
+                  <text x="80" y="68" fill="rgba(235, 235, 245, 0.5)" font-family="Inter" font-size="11" text-anchor="middle" id="svg-node-api">Harness / FastAPI</text>
+                </g>
+
+                <!-- BACKEND SERVERS & SERVICES -->
+                <!-- LLM Node -->
+                <g transform="translate(200, 380)" filter="url(#shadow)">
+                  <rect width="140" height="70" rx="8" fill="#1b1b1f" stroke="#10B981" stroke-width="1.5" />
+                  <text x="70" y="30" fill="#fffff5" font-family="Outfit" font-size="13" font-weight="600" text-anchor="middle" id="svg-node-llm">LLM Provider</text>
+                  <text x="70" y="50" fill="rgba(235, 235, 245, 0.5)" font-family="Inter" font-size="11" text-anchor="middle" id="svg-node-llm-sub">API Connector</text>
+                </g>
+
+                <!-- Tools Node -->
+                <g transform="translate(460, 380)" filter="url(#shadow)">
+                  <rect width="140" height="70" rx="8" fill="#1b1b1f" stroke="#F59E0B" stroke-width="1.5" />
+                  <text x="70" y="30" fill="#fffff5" font-family="Outfit" font-size="13" font-weight="600" text-anchor="middle" id="svg-node-tools">Local & Cloud Tools</text>
+                  <text x="70" y="50" fill="rgba(235, 235, 245, 0.5)" font-family="Inter" font-size="11" text-anchor="middle" id="svg-node-tools-sub">Shell / Translate / Search</text>
+                </g>
+                
+                <!-- Protocol Badges -->
+                <rect x="270" y="130" width="75" height="20" rx="4" fill="#202024" stroke="rgba(82, 82, 89, 0.3)" stroke-width="1" />
+                <text x="307" y="144" fill="#3B82F6" font-family="Fira Code" font-size="9" text-anchor="middle">AG-UI (SSE)</text>
+
+                <rect x="455" y="130" width="75" height="20" rx="4" fill="#202024" stroke="rgba(82, 82, 89, 0.3)" stroke-width="1" />
+                <text x="492" y="144" fill="#8B5CF6" font-family="Fira Code" font-size="9" text-anchor="middle">AG-UI (SSE)</text>
+              </svg>
+            </div>
+            
+            <div class="arch-text-info">
+              <h3 data-i18n="arch-info-title">Data Pipeline Architecture</h3>
+              <p data-i18n="arch-info-subtitle">The design of DeerFlow-Api architecture centers on real-time stream delivery and centralized state persistence:</p>
+              
+              <div class="arch-info-block">
+                <div class="block-icon blue-text"><i data-lucide="radio"></i></div>
+                <div class="block-content">
+                  <h4 data-i18n="arch-feat-1-title">Standard AG-UI Stream Delivery</h4>
+                  <p data-i18n="arch-feat-1-desc">TUI and Android App communicate with deerflow-api using the standard AG-UI protocol. Streaming events (text, reasoning, tool states) are pushed instantly via HTTP/SSE, guaranteeing a zero-latency interactive feel.</p>
+                </div>
+              </div>
+              
+              <div class="arch-info-block">
+                <div class="block-icon green-text"><i data-lucide="git-merge"></i></div>
+                <div class="block-content">
+                  <h4 data-i18n="arch-feat-2-title">DeerFlow-Api Harness Orchestration</h4>
+                  <p data-i18n="arch-feat-2-desc">The backend encapsulates the Agent harness capability, creating a flexible execution context. Enabled with plan_mode by default, it tracks task steps and manages concurrent sub-agents efficiently.</p>
+                </div>
+              </div>
+              
+              <div class="arch-info-block">
+                <div class="block-icon orange-text"><i data-lucide="shield-check"></i></div>
+                <div class="block-content">
+                  <h4 data-i18n="arch-feat-3-title">SQLite Persistence & Thread Sharing</h4>
+                  <p data-i18n="arch-feat-3-desc">All session history and checkpoint states are saved in SQLite. Threads endpoints allow clients to fetch historic conversations, so you can start a task on TUI and seamlessly continue it on your phone.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <p class="footer-license" data-i18n="footer-license">Released under the MIT License.</p>
+        <p class="footer-copy">Copyright &copy; 2026 omengye. Enabled by ByteDance deerflow.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
